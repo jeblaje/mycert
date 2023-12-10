@@ -97,7 +97,7 @@
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12">
 
                     
-                    <div class="descript_main_wrapper pb-0">
+                    {{-- <div class="descript_main_wrapper pb-0">
                         <h4>Job Overview</h4>
                         <ul class="job-overview">
                         <li>
@@ -174,7 +174,7 @@
                         </li>
 
                         </ul>
-                    </div>
+                    </div> --}}
 
                     <div class="inner-page-main-wrapper mt-0 mb-0 float_left">
                         <div class="side-bar-social blog-social float_left">
@@ -222,6 +222,8 @@
             </div>
         </div>
     </div>
+
+    
 @endsection
 
 

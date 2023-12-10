@@ -324,16 +324,15 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="home1-section-heading1">
-                    <h4>Double Your Experience</h4>
+                    <h4>RMB Glow Up</h4>
                 </div>
                 <div class="mobile-text float_left">
-                    <h4>All it takes is 30 seconds to Download. Your Mobile App for Job Fast, Simple & Delightful.</h4>
+                    <h4>Estamos trabajando para ti y subiendo el nivel a la experiencia con nosotros. Ahora podras:</h4>
                     <ul>
-                    <li> > &nbsp; Duis aute irure dolor in reprehenderit</li>
-                    <li> > &nbsp; Voluptate velit esse cillum dolore</li>
-                    <li> > &nbsp; Fugiat nulla pariatur. Excepteur sint occaecat</li>
-                    <li> > &nbsp; Cupidatat non proident sunt in culpa</li>
-                    <li> > &nbsp; Qui officia deserunt mollit anim</li>
+                    <li> > &nbsp; Descargar tu certificado desde <a href="{{route('certf')}}">aqui</a></li>
+                    <li> > &nbsp; Ver nuestros servicios en un solo lugar</li>
+                    <li> > &nbsp; Estar atento a los cursos viejos y nuevos que tenemos para ti</li>
+                    <li> > &nbsp; Nuestra informacion de contacto a la mano</li>
                     </ul>
                 </div>
                 <div class="app-btn">

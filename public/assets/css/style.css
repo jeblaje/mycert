@@ -13617,3 +13617,57 @@ ul {
 .main-header-wrapper1 .menu-fixed .social-media-icons .login-btn .user-text a {
   color: #111;
 }/*# sourceMappingURL=style.css.map */
+
+
+
+
+
+
+
+
+/* Estos estilos se han editado para el formulario de busqueda de certificados
+tener cuidado al usar las clases en otro lugar */
+
+.lv_search_box select {
+  color: #111111;
+  width: calc(100% - 45px);
+  padding: 0px 10px;
+  height: 45px;
+  border: 1px solid #e1e1e1;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-right: 0px;
+}
+
+.lv_search_box input {
+  float: left;
+  color: #111111;
+  width: calc(100% - 45px);
+  padding: 0px 10px;
+  height: 45px;
+  border: 1px solid #e1e1e1;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-right: 0px;
+}
+
+.lv_search_box input + button {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #e1e1e1;
+  border-left: none;
+  background-color: #fff;
+  color: #111;
+  text-align: center;
+  padding: 0px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transition: all 0.5s;
+}
+
+.lv_search_box input + button:hover {
+  color: #fff;
+  background: #cca334;
+  border-color: #cca334;
+  transition: all 0.5s;
+}

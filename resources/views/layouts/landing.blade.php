@@ -58,7 +58,7 @@
                         <div class="row">
                            <div class="col-lg-2 col-md-6">
                               <div class="index1-logo">
-                                 <a href="index.html">
+                                 <a href="/">
                                  <img src="{{asset('assets/images/index3/blue-logo.png')}}" alt="logo">
                                  </a>
                               </div>
@@ -84,9 +84,9 @@
                                  </ul>
                               </nav>
 
-                              {{-- <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
+                              <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
 
-                                 <li>
+                                 {{-- <li>
                                     <div class="search_bar hidden-xs">
                                        <div class="lv_search_bar" id="search_button">
                                           <a href="javascript:;">
@@ -115,21 +115,22 @@
                                           <button><i class="fa fa-search" aria-hidden="true"></i></button>
                                        </div>
                                     </div>
-                                 </li>
+                                 </li> --}}
 
                                  <li class="post-drop">
-                                    <a class="post-btn" href="javascript:;">
+                                    <a class="post-btn" href="{{route('certf')}}">
                                        <span>
-                                          <!-- <i class="fas fa-plus-circle"></i>   --> Post Now &nbsp; <i class="fas fa-chevron-down"></i>
+                                           <i class="fas fa-download"></i>   Certificados
+                                          {{-- &nbsp; <i class="fas fa-chevron-down"></i> --}}
                                        </span>
                                     </a>
-                                    <div class="post-page-wrapper">
+                                    {{-- <div class="post-page-wrapper">
                                        <a href="post-jobs.html">Post a Job</a>
                                        <a href="post-project.html">Post a Project</a>
-                                    </div>
+                                    </div> --}}
                                  </li>
 
-                              </ul> --}}
+                              </ul>
 
                            </div>
 
@@ -369,11 +370,11 @@
                            <h4>Menu</h4>
                            <ul>
                               <li><a href="freelancer-listing-right-sidebar.html"><i class="fas fa-angle-right"></i>Servicios</a></li>
-                              <li><a href="company-listing-right-sidebar.html"><i class="fas fa-angle-right"></i>Cursos</a></li>
-                              <li><a href="project-listing-right-sidebar.html"><i class="fas fa-angle-right"></i>Nosotros</a></li>
                               <li><a href="post-jobs.html"><i class="fas fa-angle-right"></i>Contactanos</a></li>
+                              <li><a href="project-listing-right-sidebar.html"><i class="fas fa-angle-right"></i>Certificados</a></li>
                               @auth
-                                 <li><a href="{{ url('/admin') }}"><i class="fas fa-angle-right"></i>Panel</a></li>
+                                 <li><a href="{{ route('students.index') }}"><i class="fas fa-angle-right"></i>Panel</a></li>
+                                 {{-- <li><a href="{{ route('dashboard') }}"><i class="fas fa-angle-right"></i>Panel</a></li> --}}
                                  @else
                                  <li><a href="{{ route('login') }}"><i class="fas fa-angle-right"></i>Log in</a></li>
 
