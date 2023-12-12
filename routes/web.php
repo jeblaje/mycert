@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\PdfController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Models\Certificate;
 use App\Models\Student;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,6 +37,8 @@ Route::get('/certf', function () {
     return view('cert');
 })->name('certf');
 
+Route::get('gen-pdf/{file}', [PdfController::class, 'gen'])->name('generate');
+
 Route::post('/searchFile', function (Request $request) {
 
     $student = Student::where('dni', $request->dni)->get()->first();
@@ -61,7 +66,7 @@ Route::middleware([
         
         $request->validate([
             'dni' => 'required',
-            'file' => 'required',
+            // 'file' => 'required',
             'day' => 'required',
             'month' => 'required',
             'year' => 'required'
@@ -69,9 +74,9 @@ Route::middleware([
 
         // return $request->all();
         // return        $file = $request->file('file')->getClientOriginalName();
-        $file = $request->file('file')->store("public/documents/$request->dni");
-        $url = Storage::url($file);
-        $name = $request->dni . '_' . strtr($request->title, " ", "_"). '.' . $request->file('file')->guessExtension();
+        // $file = $request->file('file')->store("public/documents/$request->dni");
+        // $url = Storage::url($file);
+        // $name = $request->dni . '_' . strtr($request->title, " ", "_"). '.' . $request->file('file')->guessExtension();
 
         // return [
         //     'path' => $file,
@@ -81,7 +86,7 @@ Route::middleware([
 
 
         Certificate::create([
-            'path' => $url,
+            // 'path' => $url,
             'student_id' => $request->student_id,
             'title' => $request->title,
             'dni' => $request->dni,
@@ -94,3 +99,4 @@ Route::middleware([
     })->name('documents.store');
 
 });
+

@@ -33,15 +33,18 @@
         
         <form action="{{route('searchFile')}}" method="POST">
           @csrf
+
           <div class="col-md-3 mx-auto lv_search_box" >
             <select name="" id="">
               <option value="">Cedula</option>
             </select>
           </div>
+
           <div class="col-md-3 mx-auto lv_search_box" >
             <input type="text" name="dni" placeholder="Numero de documento">
             <button><i class="fa fa-search"></i></button>
           </div>
+          
         </form>
 
       </div>
@@ -72,7 +75,8 @@
                               <th scope="row">1</th>
                               <td>{{$file->title}}</td>
                               <td>
-                                <a href="{{ Request::root() . $file->path}} " target="_blanck"  class="btn btn-info"><i class="fa fa-eye" style="margin-right: 4px;"></i>Descargar</a>
+                                {{-- <a href="{{ Request::root() . $file->path}} " target="_blanck"  class="btn btn-info"><i class="fa fa-eye" style="margin-right: 4px;"></i>Descargar</a> --}}
+                                <a href="{{route('generate', $file)}}" target="_blanck"  class="btn btn-info"><i class="fa fa-eye" style="margin-right: 4px;"></i>Descargar</a>
                               </td>
                             </tr>
                           @endforeach

@@ -258,12 +258,52 @@
                                             @enderror
                                         </div>
 
-                                        <div class="mb-3">
+                                        {{-- <div class="mb-3">
                                             <label for="formFile" class="form-label">Documento (PDF)</label>
                                             <input class="form-control" type="file" accept="application/pdf" name="file" id="formFile">
                                             @error('file')
                                                 <div id="Emailfeedback" class="invalid-feedback">
                                                     {{ $message }} 
+                                                </div>
+                                            @enderror
+                                        </div> --}}
+
+                                        <div class="mb-3 col-lg-4>
+                                            <label for="Name" class="form-label">Dia</label>
+                                            <input value="{{ old('day') }}" name="day" type="number"
+                                                class="form-control @error('day') is-invalid @enderror" id="Name">
+                                            @error('day')
+                                                <div id="Emailfeedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label for="TypeDni" class="form-label">Mes</label>
+                                            <select name="month" id="TypeDni" class="form-select" >
+                                              <option value="1" selected>Enero</option>
+                                              <option value="2">Febrero</option>
+                                              <option value="3">Marzo</option>
+                                              <option value="4">Abril</option>
+                                              <option value="5">Mayo</option>
+                                              <option value="6">Junio</option>
+                                              <option value="7">Julio</option>
+                                              <option value="8">Agosto</option>
+                                              <option value="9">Sectiembre</option>
+                                              <option value="10">Octubre</option>
+                                              <option value="11">Noviembre</option>
+                                              <option value="12">Diciembre</option>
+                                            </select>
+                                          </div>
+
+                                        <div class="mb-3 col-lg-4>
+                                            <label for="Name" class="form-label">Year</label>
+                                            <input value="{{ old('year') }}" name="year" type="number"
+                                                class="form-control @error('year') is-invalid @enderror" id="Name">
+                                            @error('year')
+                                                <div id="Emailfeedback" class="invalid-feedback">
+                                                    {{ $message }}
                                                 </div>
                                             @enderror
                                         </div>
@@ -442,7 +482,7 @@
                         <td class="border px-4 py-2">{{$file->title}}</td>
                         {{-- <td class="border px-4 py-2 text-center"></td> --}}
                         <td class="border px-4 py-2">
-                            <a href="{{ Request::root() . $file->path}} " target="_blanck" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                            <a href="{{route('generate', $file->id)}}" target="_blanck" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
                                 <i class="fa fa-eye" style="margin-right: 4px;"></i>
                                 <span> Ver </span>
                             </a>
