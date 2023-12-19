@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $students = Student::paginate(10);
         return view('dashboard.users.index', compact('students'));
     }
 
@@ -49,7 +50,8 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('dashboard.users.show', compact('student'));
+        $courses = Course::all();
+        return view('dashboard.users.show', compact('student', 'courses'));
     }
 
     /**

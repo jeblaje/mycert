@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Certificate extends Model
+class Course extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        "day", "month", "year", "student_id", "dni", "course_id"
+        "name", "hours", "description", "value"
     ];
 
     public function student() {
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(Course::class);
     }
 
-    public function course() {
-        return $this->belongsTo(Course::class);
+    public function cetificates() {
+        return $this->hasMany(Certificate::class);
     }
 }

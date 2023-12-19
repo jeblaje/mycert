@@ -2,54 +2,56 @@
 
 @section('content')
     <!-- banner section start start-->
-    <div class="index3-slider-wrapper ps-rel">
+    <div class="index3-slider-wrapper ps-rel" >
+        
         <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-12">
-                <div class="slider-caption">
-                    <h2>Su mejor opción en consultorías & asesorías empresariales</p>
-                </div>
-
-                {{-- <div class="slider-form float_left">
-                    <form>
-
-                    <div class="form-group mb-4 row">
-                        <div class="col-md-12 col-12 field-icon">
-                            <input type="text" placeholder="Keyword e.g. (Job Title, Description, Tags)">
-                            <span><i class="fa fa-search" aria-hidden="true"></i></span>
-                        </div>
-                        
+            <div class="row">
+                <div class="col-lg-6 col-12" >
+                    <div class="slider-caption">
+                        <h2>Su mejor opción en consultorías & asesorías empresariales</p>
                     </div>
 
-                    <div class="form-group row">
-                        <div class="col-md-12 col-12 field-icon">
-                            <div class="select-field">
-                                <select>
-                                <option selected="selected" value="">For Location</option>
-                                <option value="5-6">Bhopal</option>
-                                <option value="7-9">Delhi</option>
-                                <option value="10-13">Maharashtra </option>
-                                <option value="10-13">Chennai </option>
-                                </select>
+                    {{-- <div class="slider-form float_left">
+                        <form>
+
+                        <div class="form-group mb-4 row">
+                            <div class="col-md-12 col-12 field-icon">
+                                <input type="text" placeholder="Keyword e.g. (Job Title, Description, Tags)">
+                                <span><i class="fa fa-search" aria-hidden="true"></i></span>
                             </div>
-                            <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i></span>
+                            
                         </div>
-                    </div>
 
-                    </form>
-                    <button class="search-btn"> <span><i class="fa fa-search" aria-hidden="true"></i> &nbsp; Search Job</span> </button>
-                    
-                </div> --}}
-            </div>
+                        <div class="form-group row">
+                            <div class="col-md-12 col-12 field-icon">
+                                <div class="select-field">
+                                    <select>
+                                    <option selected="selected" value="">For Location</option>
+                                    <option value="5-6">Bhopal</option>
+                                    <option value="7-9">Delhi</option>
+                                    <option value="10-13">Maharashtra </option>
+                                    <option value="10-13">Chennai </option>
+                                    </select>
+                                </div>
+                                <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
 
-            <div class="col-lg-6 col-12">
-                <div class="index2-slider-img d-lg-block d-none">
-                    <img src="{{asset('assets/images/index3/slider-img.png')}}" alt="img">
+                        </form>
+                        <button class="search-btn"> <span><i class="fa fa-search" aria-hidden="true"></i> &nbsp; Search Job</span> </button>
+                        
+                    </div> --}}
                 </div>
-            </div>
 
+                <div class="col-lg-6 col-12" >
+                    <div class="index2-slider-img d-lg-block d-none ">
+                        <img src="{{asset('assets/images/index3/slider-img.png')}}" alt="img">
+                    </div>
+                </div>
+
+            </div>
         </div>
-        </div>
+        
         <div class="project-pipe-wrapper float_left">
         <div class="container">
             <div class="pro-pipe-main">
@@ -59,6 +61,7 @@
             </div>
         </div>
         </div>
+
     </div>
     <!-- banner section start end-->
 
@@ -176,21 +179,25 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
 
-                        <div class="swiper-slide">
-                            <span><i class="fa fa-code" aria-hidden="true"></i></span>
-                            <h4>Contabilidad sistematizada</h4>
-                            <p>
-                                Curso teorico practico de contabilidad sistematizada software contable world office. Incluye certificado de asistencia y kit de material didactico.
-                            </p>
-                            <a href="javascript:;">Explore &nbsp; <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        </div>
+                        @foreach ($courses as $course)
+                        
+                            <div class="swiper-slide">
+                                <span><i class="fa fa-code" aria-hidden="true"></i></span>
+                                <h4>{{$course->name}}</h4>
+                                <p>
+                                    {{$course->description}}
+                                </p>
+                                {{-- <a href="javascript:;">Explore &nbsp; <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> --}}
+                            </div>
 
+                        @endforeach
+                        {{-- 
                         <div class="swiper-slide">
                             <span><i class="fa fa-laptop" aria-hidden="true"></i></span>
                             <h4>Facturación y caja</h4>
                             <p>Curso rapido de facturación y cajaaprende con profesionales certificados por wolrd office, el proceso completo de facturación</p>
                             <a href="javascript:;">Explore &nbsp; <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        </div>
+                        </div> --}}
 
                         {{-- <div class="swiper-slide">
                             <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
@@ -226,7 +233,7 @@
 
 
 
-    <div class="explore-category-wrapper float_left ptb-100">
+    {{-- <div class="explore-category-wrapper float_left ptb-100">
      
         <div class="container">
             <div class="home1-section-heading1">
@@ -314,7 +321,7 @@
             
         </div>
         
-    </div>
+    </div> --}}
 
 
 
@@ -336,13 +343,13 @@
                     </ul>
                 </div>
                 <div class="app-btn">
-                    <a href="javascript:;"> <img src="{{asset('assets/images/index2/app-btn.png"')}}' alt="btn"> </a>
-                    <a href="javascript:;"> <img src="{{asset('assets/images/index2/app-btn1.png"')}}' alt="btn"> </a>
+                    {{-- <a href="javascript:;"> <img src="{{asset('assets/images/index3/app-btn.png"')}}' alt="btn"> </a> --}}
+                    {{-- <a href="javascript:;"> <img src="{{asset('assets/images/index3/app-btn1.png"')}}' alt="btn"> </a> --}}
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="mobile-img float_left">
-                    <img class="img-fluid" src="{{asset('assets/images/index3/mobile.png')}}" alt="img">
+                    {{-- <img class="img-fluid" src="{{asset('assets/images/index3/mobile.png')}}" alt="img"> --}}
                 </div>
             </div>
         </div>

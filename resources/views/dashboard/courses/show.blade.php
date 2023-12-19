@@ -247,17 +247,26 @@
 
                                     <div class="row">
 
-                                        <div class="col-md-12 mb-3 ">
-                                            <label for="TypeDni" class="form-label">Curso</label>
-                                            <select name="course_id" id="TypeDni" class="form-select form-control">
-                                                @foreach ($courses as $course)
-                                                    
-                                                    <option value="{{$course->id}}">{{$course->name}}</option>
-
-                                                @endforeach
-                                            </select>
+                                        <div class="mb-3">
+                                            <label for="Name" class="form-label">Nombre del curso</label>
+                                            <input value="{{ old('title') }}" name="title" type="text"
+                                                class="form-control @error('title') is-invalid @enderror" id="Name">
+                                            @error('title')
+                                                <div id="Emailfeedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
 
+                                        {{-- <div class="mb-3">
+                                            <label for="formFile" class="form-label">Documento (PDF)</label>
+                                            <input class="form-control" type="file" accept="application/pdf" name="file" id="formFile">
+                                            @error('file')
+                                                <div id="Emailfeedback" class="invalid-feedback">
+                                                    {{ $message }} 
+                                                </div>
+                                            @enderror
+                                        </div> --}}
 
                                         <div class="mb-3 col-lg-4>
                                             <label for="Name" class="form-label">Dia</label>
@@ -467,10 +476,10 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($student->certificates as $file)
+                    @foreach ($student->files as $file)
                 
                         <tr>
-                            <td class="border px-4 py-2">{{$file->course->name}}</td>
+                            <td class="border px-4 py-2">{{$file->title}}</td>
                             {{-- <td class="border px-4 py-2 text-center"></td> --}}
                             <td class="border px-4 py-2">
                                 <a href="{{route('generate', $file->id)}}" target="_blanck" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
@@ -489,15 +498,10 @@
                                     <span span> Editar datos certificado </span>
                                 </button>
 
-
-                                <form action="{{route('certificates.destroy', $file)}}" method="POST" style="margin-bottom: -15px; display: inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button  type="submit" class="bg-gray-300 hover:bg-gray-400 text-gray-800 text-danger  font-bold py-2 px-4 rounded inline-flex items-center" style="color: #000;">
-                                        <i class="fa fa-trash" style="margin-right: 4px;"></i>
-                                        <span span> Eliminar </span>
-                                    </button>
-                                </form>
+                                <a href="{{ Request::root() . '/public' . $file->path}} " target="_blanck" class="bg-gray-300 hover:bg-gray-400 text-gray-800 text-danger  font-bold py-2 px-4 rounded inline-flex items-center">
+                                    <i class="fa fa-trash" style="margin-right: 4px;"></i>
+                                    <span> Eliminar </span>
+                                </a>
 
                             </td>
                         </tr>
@@ -508,10 +512,10 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
 
-                                    <form action="{{ route('certificates.update', $file) }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('documents.store') }}" method="POST" enctype="multipart/form-data">
 
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Editar certificado</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Nuevo certificado</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                                                 style="color: #000;"></button>
                                         </div>
@@ -519,20 +523,18 @@
                                         <div class="modal-body">
 
                                             @csrf
-                                            @method('PUT')
 
                                             <div class="row">
 
-
-                                                <div class="col-md-12 mb-3 ">
-                                                    <label for="TypeDni" class="form-label">Curso</label>
-                                                    <select name="course_id" id="TypeDni" class="form-select form-control">
-                                                        @foreach ($courses as $course)
-                                                            
-                                                            <option @selected($course->id == $file->course_id) value="{{$course->id}}">{{$course->name}}</option>
-        
-                                                        @endforeach
-                                                    </select>
+                                                <div class="mb-3">
+                                                    <label for="Name" class="form-label">Nombre del curso</label>
+                                                    <input value="{{ old('title', $file->title) }}" name="title" type="text"
+                                                        class="form-control @error('title') is-invalid @enderror" id="Name">
+                                                    @error('title')
+                                                        <div id="Emailfeedback" class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
 
                                                 <div class="mb-3 col-lg-4>
@@ -575,8 +577,8 @@
                                                     @enderror
                                                 </div>
 
-                                                <input type="hidden" name="dni" value="{{$student->dni}}">
-                                                <input type="hidden" name="student_id" value="{{$student->id}}">
+                                                {{-- <input type="hidden" name="dni" value="{{$student->dni}}">
+                                                <input type="hidden" name="student_id" value="{{$student->id}}"> --}}
 
                                                 
                                                 

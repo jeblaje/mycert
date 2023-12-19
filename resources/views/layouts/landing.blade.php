@@ -16,7 +16,7 @@
          <!--[endif]-->
          <head>
             <meta charset="utf-8" />
-            <title>Tabula</title>
+            <title>RMB</title>
             <meta content="width=device-width, initial-scale=1.0" name="viewport" />
             <!--Template style -->
             <link rel="stylesheet" type="text/css" href="{{asset('assets/css/animate.css')}}" />
@@ -59,7 +59,7 @@
                            <div class="col-lg-2 col-md-6">
                               <div class="index1-logo">
                                  <a href="/">
-                                 <img src="{{asset('assets/images/index3/blue-logo.png')}}" alt="logo">
+                                 <img src="{{asset('assets/images/index3/blue-logo.png')}}" alt="logo" style="width: 90px;">
                                  </a>
                               </div>
                            </div>
@@ -342,6 +342,7 @@
 
             <!-- footer section start -->
             <div class="footer-main-wrapper index3-footer-wrapper ">
+
                <div class="container">
                   <div class="row">
 
@@ -421,19 +422,20 @@
 
                   </div>
                </div>
-               <div class="bottom-footer float_left">
-                  <div class="container">
-                     <div class="row">
+               
+               <div class="bottom-footer float_left" style="background-color: #0F592F !important;">
+                  <div class="container" >
+                     <div class="row" >
                         {{-- <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                            <p>© Copyright 2020. All Rights Reserved by Webstrot</p>
                         </div> --}}
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                           <ul>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12" >
+                           <ul >
                               
-                              <li>
-                                 <a href="https://web.facebook.com/profile.php?id=61551742844411" target="_blanck"> 
+                              <li >
+                                 <a  href="https://web.facebook.com/profile.php?id=61551742844411" target="_blanck"> 
                                      <span> 
-                                         <svg viewBox="0 0 25 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                         <svg  viewBox="0 0 25 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                              <g id="Page-1" stroke="none">
                                                  <g id="Social-Icons---Isolated" transform="translate(-176.000000, -55.000000)">
                                                  <path d="M200.78439,55.3395122 L200.78439,62.9141463 L196.28878,62.9258537 C192.764878,62.9258537 192.085854,64.6 192.085854,67.0468293 L192.085854,72.4673171 L200.48,72.4673171 L199.39122,80.9434146 L192.085854,80.9434146 L192.085854,103 L183.329951,103 L183.329951,80.9434146 L176,80.9434146 L176,72.4673171 L183.329951,72.4673171 L183.329951,66.2156098 C183.329951,58.9570732 187.754146,55 194.24,55 C197.331902,55 200,55.2341463 200.78439,55.3395122 Z" id="Facebook2"></path>
@@ -458,6 +460,8 @@
 
                            </ul>
                         </div>
+
+
                      </div>
                   </div>
                </div>

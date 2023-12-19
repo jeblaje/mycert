@@ -70,74 +70,48 @@
                  <div class="locate-main-wrapper float_left">
                     <div class="row">
 
-                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="leave-form float_left">
-                           <h4>Dejanos un mensaje acerca de nuestros cursos</h4>
-                           <form>
-                              <div class="form-group row">
-                                 <div class="col-md-12 col-12">
-                                    <input type="text" class="form-control require" name="first_name" required="" placeholder="Full Name">
+                        {{-- <div class="col-lg-6 col-md-6 col-12">
+                           <div class="leave-form float_left">
+                              <h4>Dejanos un mensaje acerca de nuestros cursos</h4>
+                              <form>
+                                 <div class="form-group row">
+                                    <div class="col-md-12 col-12">
+                                       <input type="text" class="form-control require" name="first_name" required="" placeholder="Full Name">
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="form-group row">
-                                 <div class="col-md-12 col-12">
-                                    <input type="email" class="form-control require" name="email" required="" data-valid="email" data-error="Email should be valid." placeholder="Email Address">
+                                 <div class="form-group row">
+                                    <div class="col-md-12 col-12">
+                                       <input type="email" class="form-control require" name="email" required="" data-valid="email" data-error="Email should be valid." placeholder="Email Address">
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="form-group row">
-                                 <div class="col-md-12 col-12">
-                                    <input type="number" class="form-control require" name="contact_no" placeholder="Mobile no.">
+                                 <div class="form-group row">
+                                    <div class="col-md-12 col-12">
+                                       <input type="number" class="form-control require" name="contact_no" placeholder="Mobile no.">
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="form-group row">
-                                 <div class="col-md-12 col-12">
-                                    <input type="text" class="form-control require" name="message" placeholder="Message">
+                                 <div class="form-group row">
+                                    <div class="col-md-12 col-12">
+                                       <input type="text" class="form-control require" name="message" placeholder="Message">
+                                    </div>
                                  </div>
-                              </div>
-                              <button class="submitForm custom-btn"> <span>Send Now</span> </button>
-                           </form>
-                        </div>
-                     </div>
+                                 <button class="submitForm custom-btn"> <span>Send Now</span> </button>
+                              </form>
+                           </div>
+                        </div> --}}
 
-                       <div class="col-lg-6 col-md-6 col-12">
-                          <div class="leave-form float_left">
+                        <div class="col-lg-6 col-md-6 col-12">
+                           <div class="leave-form float_left">
 
-                            <div class="row">
-                                <h4>RMB CONSULTORES ASOCIADOS</h4>
-                                <p>
+                              <div class="row">
+                                 <h4>RMB CONSULTORES ASOCIADOS</h4>
+                                 <p>
                                     Es una firma conformada por contadores públicos especializados, con el propósito de prestar sus servicios en el campo contable, administrativo, Revisoría Fiscal, Control y Auditoria en sus diferentes modalidades.
-                                </p>
-                            </div>
+                                 </p>
+                              </div>
 
-                             {{-- <h4>Leave A Message</h4>
-
-                             <form>
-                                <div class="form-group row">
-                                   <div class="col-md-12 col-12">
-                                      <input type="text" class="form-control require" name="first_name" required="" placeholder="Full Name">
-                                   </div>
-                                </div>
-                                <div class="form-group row">
-                                   <div class="col-md-12 col-12">
-                                      <input type="email" class="form-control require" name="email" required="" data-valid="email" data-error="Email should be valid." placeholder="Email Address">
-                                   </div>
-                                </div>
-                                <div class="form-group row">
-                                   <div class="col-md-12 col-12">
-                                      <input type="number" class="form-control require" name="contact_no" placeholder="Mobile no.">
-                                   </div>
-                                </div>
-                                <div class="form-group row">
-                                   <div class="col-md-12 col-12">
-                                      <input type="text" class="form-control require" name="message" placeholder="Message">
-                                   </div>
-                                </div>
-                                <button class="submitForm custom-btn"> <span>Send Now</span> </button>
-                             </form> --}}
-
-                          </div>
-                       </div>
-                       
+                           </div>
+                        </div>
+                        
                     </div>
                  </div>
 

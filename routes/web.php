@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\CertificateController;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\PdfController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Models\Certificate;
+use App\Models\Course;
 use App\Models\Student;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -22,7 +25,8 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $courses = Course::all();
+    return view('welcome', compact('courses'));
 })->name('landing');
 
 Route::get('/services', function () {
@@ -52,6 +56,7 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard', function () {
+        return redirect()->to('students');
         return view('dashboard');
     })->name('dashboard');
 
@@ -60,35 +65,24 @@ Route::middleware([
     // })->name('users');
 
     Route::resource('students', StudentController::class)->names('students');
+    Route::resource('courses', CourseController::class)->names('courses');
+    Route::resource('certificates', CertificateController::class)->names('certificates');
 
 
     Route::post('/documents', function (Request $request) {
         
         $request->validate([
             'dni' => 'required',
-            // 'file' => 'required',
+            'course_id' => 'required',
             'day' => 'required',
             'month' => 'required',
             'year' => 'required'
         ]);
 
-        // return $request->all();
-        // return        $file = $request->file('file')->getClientOriginalName();
-        // $file = $request->file('file')->store("public/documents/$request->dni");
-        // $url = Storage::url($file);
-        // $name = $request->dni . '_' . strtr($request->title, " ", "_"). '.' . $request->file('file')->guessExtension();
-
-        // return [
-        //     'path' => $file,
-        //     'url' => $url,
-        //     'name' => $name
-        // ];
-
-
         Certificate::create([
             // 'path' => $url,
             'student_id' => $request->student_id,
-            'title' => $request->title,
+            'course_id' => $request->course_id,
             'dni' => $request->dni,
             'day' => $request->day,
             'month' => $request->month,

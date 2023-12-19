@@ -192,7 +192,7 @@
           </x-slot>
 
           <x-slot name="aside">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore corporis at, ipsam impedit provident, quos amet eveniet aliquid excepturi quidem magni veritatis voluptates quas suscipit velit itaque? Maxime, iste iusto?
+              Desde aqui podras crear nuevos estudiantes con sus datos personales para tenerlos en base de datos, una vez creado podras añadirles cursos que hallan realizado y el sistema le creara un certificado de acuerdo a la informacion especificada del documento como fecha de expedicion del certificado, nombre completo del estudiante etc.
           </x-slot>
 
 
@@ -233,7 +233,8 @@
 
 
     </div>
-
+    {{$students->links()}}
+    <br>
       
 </x-app-layout>
 

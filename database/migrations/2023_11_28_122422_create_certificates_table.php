@@ -14,15 +14,13 @@ return new class extends Migration
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
             
-            // $table->string('path');
-
             $table->string('dni');
-            $table->string('title');
             
             $table->string('day');
             $table->string('month');
             $table->string('year');
             
+            $table->foreignId('course_id')->nullable()->constrained()->onDelete('SET NULL');
             $table->foreignId('student_id')->nullable()->constrained()->onDelete('SET NULL');
 
             $table->timestamps();

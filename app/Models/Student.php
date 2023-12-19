@@ -13,8 +13,9 @@ class Student extends Model
         "name", "email", "phone", "address", "type_dni", "dni"
     ];
 
-    public function files() {
+    public function certificates() {
         return $this->hasMany(Certificate::class);
     }
+
     
 }

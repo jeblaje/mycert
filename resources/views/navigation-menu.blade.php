@@ -6,7 +6,8 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('landing') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                        {{-- <x-application-mark class="block h-9 w-auto" /> --}}
+                        <img src="{{asset('assets/images/index3/blue-logo.png')}}" style="width: 60px;" alt="">
                     </a>
                 </div>
 
@@ -21,6 +22,10 @@
                         {{ __('Estudiantes') }}
                     </x-nav-link>
 
+                    <x-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.index')">
+                        {{ __('Cursos') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 
@@ -29,6 +34,8 @@
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
                         <x-dropdown align="right" width="60">
+
+
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
@@ -152,6 +159,10 @@
 
             <x-responsive-nav-link href="{{ route('students.index') }}" :active="request()->routeIs('students')">
                 {{ __('Estudiantes') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses')">
+                {{ __('Cursos') }}
             </x-responsive-nav-link>
 
         </div>
