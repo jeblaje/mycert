@@ -33,38 +33,31 @@ class PdfController extends Controller
         $fpdi->addPage($size['orientation'],array($size['width'],$size['height']));
         $fpdi->useTemplate($template);
 
+        $si = [
+            'W' => $size['width'], //254.0
+            'H' => $size['height'] //190.5
+        ];
+
+        // dd($si);
         // NAME STUDENT
         $fpdi->SetFont("Arial","",30);
         $fpdi->SetTextColor(255,0,0);
-        $left = 75;
-        $top = 118;
         $text = $document->student->name;
-        if (mb_strlen($document->student->name) > 28) {
-            $left = 70;
-        }
-
-        if (mb_strlen($document->student->name) < 22) {
-            $left = 90;
-        }
-
-        if (mb_strlen($document->student->name) < 17) {
-            $left = 100;
-        }
-
-        $fpdi->Text($left, $top, $text);
+        $fpdi->SetY(85);
+        $fpdi->Cell(0,11,$text,0,0,'C');
 
         // DAY STUDENT
-        $fpdi->SetFont("Arial","",14);
+        $fpdi->SetFont("Arial","",13);
         $fpdi->SetTextColor(255,0,0);
-        $left = 218;
-        $top = 170;
+        $left = 166;
+        $top = 130;
         $text = $document->day;
         if ($document->day > 9) {
-            $left = 217;
+            $left = 165;
         }
         $fpdi->Text($left, $top, $text);
 
-        // // MONTH STUDENT
+        // MONTH STUDENT
         $fpdi->SetFont("Arial","",13);
         $fpdi->SetTextColor(255,0,0);
         
@@ -117,24 +110,55 @@ class PdfController extends Controller
             $monthh = "Diciembre";
         }
 
-        $left = 130;
-        $top = 180;
+        $left = 198;
+        $top = 130;
         if (mb_strlen($monthh) <= 7) {
-            $left = 134;
+            $left = 199;
         }
 
         $text = $monthh;
         $fpdi->Text($left, $top, $text);
 
         // YEAR STUDENT
-        $fpdi->SetFont("Arial","",14);
+        $fpdi->SetFont("Arial","",13);
         $fpdi->SetTextColor(255,0,0);
-        $left = 188;
-        $top = 180;
+        $left = 137;
+        $top = 136;
         $text = $document->year;
         $fpdi->Text($left, $top, $text);
 
-        return $fpdi->Output('I', 'generated.pdf');
+        // DNI STUDENT
+        $fpdi->SetFont("Arial","",13);
+        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetXY(28, 95);
+        $text = $document->student->dni;
+        $fpdi->Cell(0,11,$text,0,0,'C');
 
+        // EXPEDICION STUDENT
+        $fpdi->SetFont("Arial","",13);
+        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetXY(150, 95);
+        $text = 'Amazonas';
+        // $text = $document->student->exoedience;
+        $fpdi->Cell(0,11,$text,0,0,'C');
+
+
+
+        // TEXTO CURSO STUDENT
+        $fpdi->SetFont("Arial","",20);
+        $fpdi->SetTextColor(255,0,0);
+        $text = 'Por su destacada participación en el curso ';
+        $fpdi->SetY(105);
+        $fpdi->MultiCell(0, 7, utf8_decode($text), 0, 'C');
+
+
+        // CURSO STUDENT
+        $fpdi->SetFont("Arial","",20);
+        $fpdi->SetTextColor(255,0,0);
+        $text = $document->course->name;
+        $fpdi->MultiCell(0, 7, utf8_decode($text), 0, 'C');
+        
+        
+        return $fpdi->Output('I', 'generated.pdf');
     }
 }

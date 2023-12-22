@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('dni')->unique();
+            $table->string('locate_expe_dni');
             $table->string('email')->unique();
             
             $table->integer('type_dni');

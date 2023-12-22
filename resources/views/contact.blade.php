@@ -70,7 +70,7 @@
                  <div class="locate-main-wrapper float_left">
                     <div class="row">
 
-                        {{-- <div class="col-lg-6 col-md-6 col-12">
+                        <div class="col-lg-6 col-md-6 col-12">
                            <div class="leave-form float_left">
                               <h4>Dejanos un mensaje acerca de nuestros cursos</h4>
                               <form>
@@ -97,7 +97,7 @@
                                  <button class="submitForm custom-btn"> <span>Send Now</span> </button>
                               </form>
                            </div>
-                        </div> --}}
+                        </div>
 
                         <div class="col-lg-6 col-md-6 col-12">
                            <div class="leave-form float_left">

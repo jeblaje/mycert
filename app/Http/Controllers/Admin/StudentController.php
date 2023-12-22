@@ -38,6 +38,7 @@ class StudentController extends Controller
             "phone" => ['required'],
             "address" => ['required'],
             "type_dni" => ['required'],
+            "locate_expe_dni" => ['required'],
             "dni" => ['required']
         ]);
 

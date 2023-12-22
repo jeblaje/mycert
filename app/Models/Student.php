@@ -10,7 +10,7 @@ class Student extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name", "email", "phone", "address", "type_dni", "dni"
+        "name", "email", "phone", "address", "type_dni", "dni", "locate_expe_dni"
     ];
 
     public function certificates() {

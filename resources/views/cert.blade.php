@@ -70,7 +70,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($student->files as $file)
+                          @foreach ($student->certificates as $file)
                             <tr>
                               <th scope="row">1</th>
                               <td>{{$file->title}}</td>
