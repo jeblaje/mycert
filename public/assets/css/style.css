@@ -12530,7 +12530,7 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
   padding: 90px 0px 0px;
-  width: 100%;
+  width: 100% 100%;
   float: left;
   position: relative;
   margin-top: -97px;

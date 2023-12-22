@@ -43,16 +43,16 @@
                     </div> --}}
                 </div>
 
-                <div class="col-lg-6 col-12" >
+                {{-- <div class="col-lg-6 col-12" >
                     <div class="index2-slider-img d-lg-block d-none ">
                         <img src="{{asset('assets/images/index3/slider-img.png')}}" alt="img">
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
         
-        <div class="project-pipe-wrapper float_left">
+        {{-- <div class="project-pipe-wrapper float_left">
         <div class="container">
             <div class="pro-pipe-main">
                 <h5>Servicios: <span>2,500</span></h5>
@@ -60,7 +60,7 @@
                 <h5>Clientes: <span>1,950</span></h5>
             </div>
         </div>
-        </div>
+        </div> --}}
 
     </div>
     <!-- banner section start end-->
@@ -233,7 +233,7 @@
 
 
 
-    {{-- <div class="explore-category-wrapper float_left ptb-100">
+    <div class="explore-category-wrapper float_left ptb-100">
      
         <div class="container">
             <div class="home1-section-heading1">
@@ -250,64 +250,65 @@
 
                         <div class="swiper-slide custom-card">
                             <div class="custom-card-header">
-                                <span> <img src="images/index2/1.png" alt="img"> </span>
-                                <a href="javascript:;"><h5>Emiro Buelvas</h5></a>
-                                <small>Contador publico</small>
-                                <ul class="star">
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="far fa-star"></i></a> </li>
-                                </ul>
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="100" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img">
                             </div>
                         </div>
 
                         <div class="swiper-slide custom-card">
                             <div class="custom-card-header">
-                                <span> <img src="images/index2/2.png" alt="img"> </span>
-                                <a href="javascript:;"><h5>Nick Johns</h5></a>
-                                <small>Megento Developer</small>
-                                <ul class="star">
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="far fa-star"></i></a> </li>
-                                </ul>
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/ccv.png')}}" width="200" alt="img">
                             </div>
                         </div>
 
                         <div class="swiper-slide custom-card">
                             <div class="custom-card-header">
-                                <span> <img src="images/index2/3.png" alt="img"> </span>
-                                <a href="javascript:;"><h5>Serina Smith</h5></a>
-                                <small>Megento Developer</small>
-                                <ul class="star">
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                <li> <a href="javascript:;"><i class="far fa-star"></i></a> </li>
-                                </ul>
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/alcaldia.png')}}" width="200" alt="img">
                             </div>
                         </div>
 
                         <div class="swiper-slide custom-card">
-                            
                             <div class="custom-card-header">
-                                <span> <img src="images/index2/4.png" alt="img"> </span>
-                                    <a href="javascript:;"><h5>John Doe</h5></a>
-                                    <small>Megento Developer</small>
-                                <ul class="star">
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="fas fa-star"></i></a> </li>
-                                    <li> <a href="javascript:;"><i class="far fa-star"></i></a> </li>
-                                </ul>
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/gobernacion.png')}}" width="200" alt="img">
                             </div>
+                        </div>
 
+                        <div class="swiper-slide custom-card">
+                            <div class="custom-card-header">
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/rues.png')}}" width="200" alt="img">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide custom-card">
+                            <div class="custom-card-header">
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/contraloria.png')}}" width="200" alt="img">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide custom-card">
+                            <div class="custom-card-header">
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/procuraduria.png')}}" width="200" alt="img">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide custom-card">
+                            <div class="custom-card-header">
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/policia.png')}}" width="200" alt="img">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide custom-card">
+                            <div class="custom-card-header">
+                                {{-- <span> <img src="{{asset('assets/images/patrocinadores/dian.png')}}" width="200" alt="img"> </span> --}}
+                                <img src="{{asset('assets/images/patrocinadores/fiscalia.png')}}" width="200" alt="img">
+                            </div>
                         </div>
 
                     </div>
@@ -321,7 +322,7 @@
             
         </div>
         
-    </div> --}}
+    </div>
 
 
 
