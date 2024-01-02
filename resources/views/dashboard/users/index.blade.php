@@ -64,6 +64,24 @@
           </div>
         @enderror
 
+        @error('type_dni')
+          <div class="col-md-12 mt-1">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Cuidado!</strong> {{ $message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        @enderror
+
+        @error('locate_expe_dni')
+          <div class="col-md-12 mt-1">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Cuidado!</strong> {{ $message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        @enderror
+
 
         {{-- <div class="col-md-12 mt-6 p-6">
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -130,22 +148,12 @@
                             </div>
                             @enderror
                           </div>
-                          
-                          <div class="col-md-6 mb-3">
-                            <label for="Phone" class="form-label">Telefono</label>
-                            <input value="{{old('phone')}}" name="phone" type="text" class="form-control @error('phone') is-invalid @enderror" id="Phone" >
-                            @error('phone')
-                            <div id="Phonefeedback" class="invalid-feedback">
-                              {{$message}}
-                            </div>
-                            @enderror
-                          </div>
 
-                          <div class="col-md-6 mb-3">
-                            <label for="Phone" class="form-label">Dirección</label>
-                            <input value="{{old('address')}}" name="address" type="text" class="form-control @error('address') is-invalid @enderror" id="Phone" >
-                            @error('address')
-                            <div id="Addressfeedback" class="invalid-feedback">
+                          <div class="col-md-142 mb-3">
+                            <label for="expedition" class="form-label">Lugar de expedición</label>
+                            <input value="{{old('locate_expe_dni')}}" name="locate_expe_dni" type="text" class="form-control @error('locate_expe_dni') is-invalid @enderror" id="expedition" >
+                            @error('locate_expe_dni')
+                            <div id="Phonefeedback" class="invalid-feedback">
                               {{$message}}
                             </div>
                             @enderror
@@ -166,6 +174,26 @@
                             <input value="{{old('dni')}}" name="dni" type="number" class="form-control @error('dni') is-invalid @enderror" id="Dni" >
                             @error('dni')
                             <div id="Dnifeedback" class="invalid-feedback">
+                              {{$message}}
+                            </div>
+                            @enderror
+                          </div>
+                          
+                          <div class="col-md-6 mb-3">
+                            <label for="Phone" class="form-label">Telefono</label>
+                            <input value="{{old('phone')}}" name="phone" type="text" class="form-control @error('phone') is-invalid @enderror" id="Phone" >
+                            @error('phone')
+                            <div id="Phonefeedback" class="invalid-feedback">
+                              {{$message}}
+                            </div>
+                            @enderror
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                            <label for="Address" class="form-label">Dirección</label>
+                            <input value="{{old('address')}}" name="address" type="text" class="form-control @error('address') is-invalid @enderror" id="Address" >
+                            @error('address')
+                            <div id="Addressfeedback" class="invalid-feedback">
                               {{$message}}
                             </div>
                             @enderror
@@ -193,6 +221,8 @@
 
           <x-slot name="aside">
               Desde aqui podras crear nuevos estudiantes con sus datos personales para tenerlos en base de datos, una vez creado podras añadirles cursos que hallan realizado y el sistema le creara un certificado de acuerdo a la informacion especificada del documento como fecha de expedicion del certificado, nombre completo del estudiante etc.
+              <br><br>
+              La lista de estudiantes esta en orden creciente de acuerdo al numero del documento de estudiante.
           </x-slot>
 
 
@@ -204,6 +234,7 @@
 
           <thead>
             <tr>
+              <th class="w-1/2 px-4 py-2">Documento</th>
               <th class="w-1/2 px-4 py-2">Estudiantes</th>
               <th class="w-1/4 px-4 py-2">Cursos realizados</th>
               <th class="w-1/4 px-4 py-2"></th>
@@ -214,6 +245,7 @@
             @foreach ($students as $student)
                 
               <tr>
+                <td class="border px-4 py-2">{{$student->dni}}</td>
                 <td class="border px-4 py-2">{{$student->name}}</td>
                 <td class="border px-4 py-2 text-center">1</td>
                 <td class="border px-4 py-2">

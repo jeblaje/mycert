@@ -73,7 +73,7 @@
                           @foreach ($student->certificates as $file)
                             <tr>
                               <th scope="row">1</th>
-                              <td>{{$file->title}}</td>
+                              <td>{{$file->course->name}}</td>
                               <td>
                                 {{-- <a href="{{ Request::root() . $file->path}} " target="_blanck"  class="btn btn-info"><i class="fa fa-eye" style="margin-right: 4px;"></i>Descargar</a> --}}
                                 <a href="{{route('generate', $file)}}" target="_blanck"  class="btn btn-info"><i class="fa fa-eye" style="margin-right: 4px;"></i>Descargar</a>

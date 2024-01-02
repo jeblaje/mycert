@@ -4,12 +4,15 @@ use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\PdfController;
 use App\Http\Controllers\Admin\StudentController;
+use App\Mail\ContactMailable;
 use App\Models\Certificate;
 use App\Models\Course;
+use App\Models\Email;
 use App\Models\Student;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,6 +26,13 @@ use Illuminate\Support\Facades\Storage;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/asd', function () {
+    $dataReq = [
+        0,1,2,3
+    ];
+    return view('emails.contact', compact('dataReq'));
+})->name('asd');
 
 Route::get('/', function () {
     $courses = Course::all();
@@ -40,6 +50,17 @@ Route::get('/contact', function () {
 Route::get('/certf', function () {
     return view('cert');
 })->name('certf');
+
+Route::post('/email', function (Request $request) {
+    
+    // return $request->all();
+    $req = Email::create($request->all());
+    Mail::to('jeblaje@gmail.com')->send(new ContactMailable($req));
+
+    return back()->with('success', 'El email Fue enviado con exito!. Nos pondremos en contacto por medio de correo electronico');
+        return redirect()->route('songs.index')->with('success', "La canción fue eliminada correctamente");
+        return 'Correo enviado';
+})->name('email');
 
 Route::get('gen-pdf/{file}', [PdfController::class, 'gen'])->name('generate');
 
@@ -93,4 +114,37 @@ Route::middleware([
     })->name('documents.store');
 
 });
+
+
+// public function storeRequest(HttpRequest $request) {
+
+
+//     $request->validate([
+//         'email' => ['required'],
+//         'message' => ['required'],
+//         'question_id' => ['required']
+//     ]);
+
+//     $req = Request::create($request->all());
+
+//     $correo = new  ContactMailable($req);
+//     Mail::to($req->question->client->email)->send($correo);
+
+//     return back()->with('success', 'Respuesta enviada al correo exitosamente!');
+
+
+//     //     // return Client::where('email', $request->email)->get();
+
+
+//     //     // if (condition) {
+//     //     //     # code...
+//     //     // } else {
+//     //     //     # code...
+//     //     // }
+        
+
+
+//     // }
+
+// }
 

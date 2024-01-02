@@ -40,15 +40,15 @@ class PdfController extends Controller
 
         // dd($si);
         // NAME STUDENT
-        $fpdi->SetFont("Arial","",30);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",30);
+        // $fpdi->SetTextColor(255,0,0);
         $text = $document->student->name;
         $fpdi->SetY(85);
         $fpdi->Cell(0,11,$text,0,0,'C');
 
         // DAY STUDENT
-        $fpdi->SetFont("Arial","",13);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",13);
+        // $fpdi->SetTextColor(255,0,0);
         $left = 166;
         $top = 130;
         $text = $document->day;
@@ -58,8 +58,8 @@ class PdfController extends Controller
         $fpdi->Text($left, $top, $text);
 
         // MONTH STUDENT
-        $fpdi->SetFont("Arial","",13);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",13);
+        // $fpdi->SetTextColor(255,0,0);
         
         $monthh = "";
         if ($document->month == "1") {
@@ -120,41 +120,41 @@ class PdfController extends Controller
         $fpdi->Text($left, $top, $text);
 
         // YEAR STUDENT
-        $fpdi->SetFont("Arial","",13);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",13);
+        // $fpdi->SetTextColor(255,0,0);
         $left = 137;
         $top = 136;
         $text = $document->year;
         $fpdi->Text($left, $top, $text);
 
         // DNI STUDENT
-        $fpdi->SetFont("Arial","",13);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",13);
+        // $fpdi->SetTextColor(255,0,0);
         $fpdi->SetXY(28, 95);
         $text = $document->student->dni;
         $fpdi->Cell(0,11,$text,0,0,'C');
 
         // EXPEDICION STUDENT
-        $fpdi->SetFont("Arial","",13);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",13);
+        // $fpdi->SetTextColor(255,0,0);
         $fpdi->SetXY(150, 95);
-        $text = 'Amazonas';
+        $text = $document->student->locate_expe_dni;
         // $text = $document->student->exoedience;
         $fpdi->Cell(0,11,$text,0,0,'C');
 
 
 
         // TEXTO CURSO STUDENT
-        $fpdi->SetFont("Arial","",20);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",20);
+        // $fpdi->SetTextColor(255,0,0);
         $text = 'Por su destacada participación en el curso ';
         $fpdi->SetY(105);
         $fpdi->MultiCell(0, 7, utf8_decode($text), 0, 'C');
 
 
         // CURSO STUDENT
-        $fpdi->SetFont("Arial","",20);
-        $fpdi->SetTextColor(255,0,0);
+        $fpdi->SetFont("Times","I",20);
+        // $fpdi->SetTextColor(255,0,0);
         $text = $document->course->name;
         $fpdi->MultiCell(0, 7, utf8_decode($text), 0, 'C');
         

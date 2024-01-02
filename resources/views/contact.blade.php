@@ -19,6 +19,17 @@
    </div>
    <!-- banner section start end-->
 
+   <div class="row">
+      @if (session('success'))
+          <div class="col-md-12 mt-1">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Gracias por comunicarte con nosotros </strong> {{ session('success') }} 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="color: #000,"></button>
+            </div>
+          </div>
+        @endif
+   </div>
+
      <div class="inner-page-main-wrapper float_left">
         <div class="container">
            <div class="row">
@@ -73,28 +84,36 @@
                         <div class="col-lg-6 col-md-6 col-12">
                            <div class="leave-form float_left">
                               <h4>Dejanos un mensaje acerca de nuestros cursos</h4>
-                              <form>
+                              <form action="{{route('email')}}" method="POST">
+
+                                 @csrf
+
                                  <div class="form-group row">
                                     <div class="col-md-12 col-12">
-                                       <input type="text" class="form-control require" name="first_name" required="" placeholder="Full Name">
+                                       <input type="text" class="form-control require" name="name" required="" placeholder="Nombre">
                                     </div>
                                  </div>
                                  <div class="form-group row">
                                     <div class="col-md-12 col-12">
-                                       <input type="email" class="form-control require" name="email" required="" data-valid="email" data-error="Email should be valid." placeholder="Email Address">
+                                       <input type="email" class="form-control require" name="email" required="" data-valid="email" data-error="Email should be valid." placeholder="Correo electronico">
                                     </div>
                                  </div>
                                  <div class="form-group row">
                                     <div class="col-md-12 col-12">
-                                       <input type="number" class="form-control require" name="contact_no" placeholder="Mobile no.">
+                                       <input type="number" class="form-control require" name="phone" placeholder="Telefono">
                                     </div>
                                  </div>
                                  <div class="form-group row">
                                     <div class="col-md-12 col-12">
-                                       <input type="text" class="form-control require" name="message" placeholder="Message">
+                                       <input type="text" class="form-control require" name="subjet" required="" placeholder="Asunto">
                                     </div>
                                  </div>
-                                 <button class="submitForm custom-btn"> <span>Send Now</span> </button>
+                                 <div class="form-group row">
+                                    <div class="col-md-12 col-12">
+                                       <input type="text" class="form-control require" name="message" placeholder="Mensaje">
+                                    </div>
+                                 </div>
+                                 <button class="submitForm custom-btn"> <span>Enviar</span> </button>
                               </form>
                            </div>
                         </div>
