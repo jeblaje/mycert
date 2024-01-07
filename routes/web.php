@@ -55,7 +55,7 @@ Route::post('/email', function (Request $request) {
     
     // return $request->all();
     $req = Email::create($request->all());
-    Mail::to('jeblaje@gmail.com')->send(new ContactMailable($req));
+    Mail::to('contacto@mbconsultoresasociados.com')->send(new ContactMailable($req));
 
     return back()->with('success', 'El email Fue enviado con exito!. Nos pondremos en contacto por medio de correo electronico');
         return redirect()->route('songs.index')->with('success', "La canción fue eliminada correctamente");
