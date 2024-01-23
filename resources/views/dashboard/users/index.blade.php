@@ -247,7 +247,7 @@
               <tr>
                 <td class="border px-4 py-2">{{$student->dni}}</td>
                 <td class="border px-4 py-2">{{$student->name}}</td>
-                <td class="border px-4 py-2 text-center">1</td>
+                <td class="border px-4 py-2 text-center"> {{count($student->certificates ?? [])}}</td>
                 <td class="border px-4 py-2">
                     <a href="{{route('students.show', $student)}}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
                         <i class="fa fa-eye" style="margin-right: 4px;"></i>
